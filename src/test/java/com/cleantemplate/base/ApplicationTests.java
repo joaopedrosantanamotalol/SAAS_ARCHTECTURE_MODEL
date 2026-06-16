@@ -1,10 +1,10 @@
-package com.power.rmaprotocol;
+package com.cleantemplate.base;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RmaprotocolApplicationTests {
+class ApplicationTests {
 
 	@Test
 	void contextLoads() {

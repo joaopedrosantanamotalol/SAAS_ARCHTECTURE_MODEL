@@ -38,6 +38,10 @@ public class SecurityConfig {
 
             .authorizeHttpRequests(auth -> auth
 
+                .requestMatchers(
+                    "/usuarios/teste"
+                ).authenticated()
+
                 // rotas públicas
                 .requestMatchers(
                     "/auth/**",

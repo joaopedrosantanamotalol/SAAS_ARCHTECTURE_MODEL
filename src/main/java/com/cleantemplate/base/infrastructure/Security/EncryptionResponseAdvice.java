@@ -59,6 +59,7 @@ public Object beforeBodyWrite(
                 || path.startsWith("/actuator")
                 || path.startsWith("/error")
                 || path.startsWith("/usuarios/teste")
+                || path.startsWith("/produtos/teste")
                 || path.startsWith("/auth/login")
         ) {
             return body;

@@ -48,7 +48,7 @@ public class UsuarioController {
         this.mapper = mapper;
         this.criarAdmin = criarADMCase;
     }
-
+    
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public UsuarioResponse criar(   

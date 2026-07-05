@@ -1,7 +1,6 @@
 package com.cleantemplate.base.infrastructure.Security;
 
 import java.io.IOException;
-import java.util.List;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -9,6 +8,8 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import com.cleantemplate.base.domain.entities.Usuario;
+import com.cleantemplate.base.infrastructure.persistence.mappers.UsuarioMapper;
 import com.cleantemplate.base.infrastructure.persistence.repositories.UsuarioRepository;
 
 import jakarta.servlet.FilterChain;
@@ -22,13 +23,16 @@ public class JwtFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;
     private final UsuarioRepository usuarioRepository;
+    private final UsuarioMapper mapper;
 
     public JwtFilter(
             JwtService jwtService,
-            UsuarioRepository usuarioRepository
+            UsuarioRepository usuarioRepository,
+            UsuarioMapper mapper
     ) {
         this.jwtService = jwtService;
         this.usuarioRepository = usuarioRepository;
+        this.mapper = mapper;
     }
 
     @Override
@@ -75,11 +79,14 @@ public class JwtFilter extends OncePerRequestFilter {
         var usuario = usuarioRepository.findByEmail(email);
 
         if (usuario.isPresent()) {
+            
+           Usuario usuarioDomain = mapper.toDomain(usuario.get());
+           UsuarioDetails userDetails = new UsuarioDetails(usuarioDomain);
 
             var auth = new UsernamePasswordAuthenticationToken(
-                    usuario.get(),
-                    null,
-                    List.of() // depois você pode colocar roles aqui
+                userDetails,
+                null,
+                userDetails.getAuthorities()
             );
 
             auth.setDetails(

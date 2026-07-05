@@ -2,6 +2,9 @@ package com.cleantemplate.base.domain.entities;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+
 public class Usuario {
 
     private Long id;
@@ -12,6 +15,7 @@ public class Usuario {
 
     private String email;
 
+    @Enumerated(EnumType.STRING)
     private RoleEnum role;
 
     private LocalDateTime dataCriacao;

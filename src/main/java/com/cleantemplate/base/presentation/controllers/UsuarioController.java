@@ -3,6 +3,7 @@ package com.cleantemplate.base.presentation.controllers;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import com.cleantemplate.base.application.usecases.AtualizarUsuarioUseCase;
 import com.cleantemplate.base.application.usecases.CriarUsuarioUseCase;
 import com.cleantemplate.base.application.usecases.DeletarUsuarioUseCase;
 import com.cleantemplate.base.application.usecases.ListarUsuarioUseCase;
+import com.cleantemplate.base.application.usecases.admin.CriarAdminUseCase;
 import com.cleantemplate.base.domain.entities.Usuario;
 import com.cleantemplate.base.infrastructure.persistence.mappers.UsuarioMapper;
 import com.cleantemplate.base.presentation.response.UsuarioResponse;
@@ -33,16 +35,18 @@ public class UsuarioController {
     private final AtualizarUsuarioUseCase atualizarUsuarioUseCase;
     private final DeletarUsuarioUseCase deletarUsuarioUseCase;
     private final UsuarioMapper mapper;
+    private final CriarAdminUseCase criarAdmin;
 
     public UsuarioController(CriarUsuarioUseCase criarUseCase, ListarUsuarioUseCase listarUsuarioUseCase,
             AtualizarUsuarioUseCase atualizarUsuarioUseCase, DeletarUsuarioUseCase deletarUsuarioUseCase,
-            UsuarioMapper mapper) {
+            UsuarioMapper mapper, CriarAdminUseCase criarADMCase) {
 
         this.criarUseCase = criarUseCase;
         this.listarUsuarioUseCase = listarUsuarioUseCase;
         this.atualizarUsuarioUseCase = atualizarUsuarioUseCase;
         this.deletarUsuarioUseCase = deletarUsuarioUseCase;
         this.mapper = mapper;
+        this.criarAdmin = criarADMCase;
     }
 
     @PostMapping
@@ -55,6 +59,20 @@ public class UsuarioController {
             mapper.toDomain(dto)
         );
 
+        return mapper.toResponse(criado);
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping("/admin")
+    @ResponseStatus(HttpStatus.CREATED)
+    public UsuarioResponse criarADM(   
+        @Valid @RequestBody CriarUsuarioDTO dto
+    ) {
+
+        Usuario criado = criarAdmin.execute(
+            mapper.toDomain(dto)
+        );
+        
         return mapper.toResponse(criado);
     }
 

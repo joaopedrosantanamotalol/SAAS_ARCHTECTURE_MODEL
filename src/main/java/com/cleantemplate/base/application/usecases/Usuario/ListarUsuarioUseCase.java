@@ -1,4 +1,4 @@
-package com.cleantemplate.base.application.usecases;
+package com.cleantemplate.base.application.usecases.Usuario;
 
 import java.util.List;
 

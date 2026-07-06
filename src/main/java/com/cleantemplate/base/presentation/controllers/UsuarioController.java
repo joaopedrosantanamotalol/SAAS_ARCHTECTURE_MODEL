@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cleantemplate.base.application.dto.AtualizarUsuarioDTO;
 import com.cleantemplate.base.application.dto.CriarUsuarioDTO;
-import com.cleantemplate.base.application.usecases.AtualizarUsuarioUseCase;
-import com.cleantemplate.base.application.usecases.CriarUsuarioUseCase;
-import com.cleantemplate.base.application.usecases.DeletarUsuarioUseCase;
-import com.cleantemplate.base.application.usecases.ListarUsuarioUseCase;
+import com.cleantemplate.base.application.usecases.Usuario.AtualizarUsuarioUseCase;
+import com.cleantemplate.base.application.usecases.Usuario.CriarUsuarioUseCase;
+import com.cleantemplate.base.application.usecases.Usuario.DeletarUsuarioUseCase;
+import com.cleantemplate.base.application.usecases.Usuario.ListarUsuarioUseCase;
 import com.cleantemplate.base.domain.entities.Usuario;
 import com.cleantemplate.base.infrastructure.Security.UsuarioAutenticado;
 import com.cleantemplate.base.infrastructure.persistence.mappers.UsuarioMapper;

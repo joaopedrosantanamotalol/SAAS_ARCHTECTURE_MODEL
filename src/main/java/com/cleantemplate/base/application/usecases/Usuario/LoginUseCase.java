@@ -1,4 +1,4 @@
-package com.cleantemplate.base.application.usecases;
+package com.cleantemplate.base.application.usecases.Usuario;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

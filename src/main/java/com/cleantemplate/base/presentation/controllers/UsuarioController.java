@@ -76,9 +76,11 @@ public class UsuarioController {
         @Valid @RequestBody AtualizarUsuarioDTO dto
     ) {
 
-        Usuario usuario = atualizarUsuarioUseCase.executar(id, dto);
+        Usuario usuarioLogado = usuarioAutenticado.get();
 
-        return mapper.toResponse(usuario);
+        atualizarUsuarioUseCase.executar(id, dto);
+
+        return mapper.toResponse(usuarioLogado);
     }
 
     @DeleteMapping("/{id}")

@@ -2,7 +2,7 @@ package com.cleantemplate.base.infrastructure.persistence.entities;
 
 import java.time.LocalDateTime;
 
-import com.cleantemplate.base.domain.entities.RoleEnum;
+import com.cleantemplate.base.domain.entities.enums.usuario.RoleEnum;
 
 import jakarta.persistence.*;
 

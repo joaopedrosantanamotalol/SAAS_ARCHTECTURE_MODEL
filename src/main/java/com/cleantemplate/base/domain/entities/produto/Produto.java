@@ -1,6 +1,6 @@
-package com.cleantemplate.base.domain.entities;
+package com.cleantemplate.base.domain.entities.produto;
 
-import com.cleantemplate.base.domain.entities.enums.DisponibilidadeEnum;
+import com.cleantemplate.base.domain.entities.enums.produto.DisponibilidadeEnum;
 
 public class Produto {
     

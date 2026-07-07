@@ -4,7 +4,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.cleantemplate.base.application.dto.LoginDTO;
-import com.cleantemplate.base.domain.entities.Usuario;
+import com.cleantemplate.base.domain.entities.Usuario.Usuario;
 import com.cleantemplate.base.domain.gateways.UsuarioGateway;
 import com.cleantemplate.base.domain.services.TokenService;
 

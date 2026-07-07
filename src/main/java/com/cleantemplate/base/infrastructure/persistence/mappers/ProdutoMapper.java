@@ -6,7 +6,7 @@ import org.mapstruct.MappingTarget;
 
 import com.cleantemplate.base.application.dto.AtualizarProdutoDTO;
 import com.cleantemplate.base.application.dto.ProdutoRequest;
-import com.cleantemplate.base.domain.entities.Produto;
+import com.cleantemplate.base.domain.entities.produto.Produto;
 import com.cleantemplate.base.infrastructure.persistence.entities.Produto.ProdutoEntity;
 import com.cleantemplate.base.presentation.response.ProdutoResponse;
 

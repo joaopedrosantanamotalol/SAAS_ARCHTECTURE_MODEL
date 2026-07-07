@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.cleantemplate.base.application.dto.AtualizarUsuarioDTO;
-import com.cleantemplate.base.domain.entities.Usuario;
+import com.cleantemplate.base.domain.entities.Usuario.Usuario;
 import com.cleantemplate.base.domain.gateways.UsuarioGateway;
 import com.cleantemplate.base.infrastructure.persistence.entities.UsuarioEntity;
 import com.cleantemplate.base.infrastructure.persistence.mappers.UsuarioMapper;

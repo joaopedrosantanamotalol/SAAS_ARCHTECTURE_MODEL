@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.cleantemplate.base.domain.entities.Usuario;
+import com.cleantemplate.base.domain.entities.Usuario.Usuario;
 import com.cleantemplate.base.domain.gateways.UsuarioGateway;
 
 @Service

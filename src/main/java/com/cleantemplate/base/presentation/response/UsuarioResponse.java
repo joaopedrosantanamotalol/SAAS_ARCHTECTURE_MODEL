@@ -2,7 +2,7 @@ package com.cleantemplate.base.presentation.response;
 
 import java.time.LocalDateTime;
 
-import com.cleantemplate.base.domain.entities.RoleEnum;
+import com.cleantemplate.base.domain.entities.enums.usuario.RoleEnum;
 
 public record UsuarioResponse(
     Long id,

@@ -19,7 +19,7 @@ import com.cleantemplate.base.application.usecases.Produto.AtualizarProdutoUseCa
 import com.cleantemplate.base.application.usecases.Produto.CriarProdutoUseCase;
 import com.cleantemplate.base.application.usecases.Produto.DeletarProdutoUseCase;
 import com.cleantemplate.base.application.usecases.Produto.ListarProdutosUseCase;
-import com.cleantemplate.base.domain.entities.Produto;
+import com.cleantemplate.base.domain.entities.produto.Produto;
 import com.cleantemplate.base.infrastructure.persistence.mappers.ProdutoMapper;
 import com.cleantemplate.base.presentation.response.ProdutoResponse;
 

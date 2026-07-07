@@ -3,7 +3,7 @@ package com.cleantemplate.base.infrastructure.Security;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
-import com.cleantemplate.base.domain.entities.Usuario;
+import com.cleantemplate.base.domain.entities.Usuario.Usuario;
 
 @Component
 public class UsuarioAutenticado {

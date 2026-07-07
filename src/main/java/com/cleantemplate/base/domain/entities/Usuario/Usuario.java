@@ -1,6 +1,8 @@
-package com.cleantemplate.base.domain.entities;
+package com.cleantemplate.base.domain.entities.Usuario;
 
 import java.time.LocalDateTime;
+
+import com.cleantemplate.base.domain.entities.enums.usuario.RoleEnum;
 
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;

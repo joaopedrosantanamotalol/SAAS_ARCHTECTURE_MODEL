@@ -1,4 +1,4 @@
-package com.cleantemplate.base.domain.entities.enums;
+package com.cleantemplate.base.domain.entities.enums.produto;
 
 public enum DisponibilidadeEnum {
     DISPONIVEL,

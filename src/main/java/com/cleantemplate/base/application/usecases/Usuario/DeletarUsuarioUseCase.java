@@ -2,8 +2,8 @@ package com.cleantemplate.base.application.usecases.Usuario;
 
 import org.springframework.stereotype.Service;
 
-import com.cleantemplate.base.domain.entities.RoleEnum;
-import com.cleantemplate.base.domain.entities.Usuario;
+import com.cleantemplate.base.domain.entities.Usuario.Usuario;
+import com.cleantemplate.base.domain.entities.enums.usuario.RoleEnum;
 import com.cleantemplate.base.domain.gateways.UsuarioGateway;
 
 @Service

@@ -8,7 +8,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.cleantemplate.base.domain.entities.Usuario;
+import com.cleantemplate.base.domain.entities.Usuario.Usuario;
 import com.cleantemplate.base.infrastructure.persistence.mappers.UsuarioMapper;
 import com.cleantemplate.base.infrastructure.persistence.repositories.UsuarioRepository;
 

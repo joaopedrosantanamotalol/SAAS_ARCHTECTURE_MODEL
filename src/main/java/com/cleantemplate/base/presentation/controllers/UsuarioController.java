@@ -19,7 +19,7 @@ import com.cleantemplate.base.application.usecases.Usuario.AtualizarUsuarioUseCa
 import com.cleantemplate.base.application.usecases.Usuario.CriarUsuarioUseCase;
 import com.cleantemplate.base.application.usecases.Usuario.DeletarUsuarioUseCase;
 import com.cleantemplate.base.application.usecases.Usuario.ListarUsuarioUseCase;
-import com.cleantemplate.base.domain.entities.Usuario;
+import com.cleantemplate.base.domain.entities.Usuario.Usuario;
 import com.cleantemplate.base.infrastructure.Security.UsuarioAutenticado;
 import com.cleantemplate.base.infrastructure.persistence.mappers.UsuarioMapper;
 import com.cleantemplate.base.presentation.response.UsuarioResponse;

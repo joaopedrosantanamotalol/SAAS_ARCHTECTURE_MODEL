@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cleantemplate.base.application.dto.CriarUsuarioDTO;
 import com.cleantemplate.base.application.usecases.admin.CriarAdminUseCase;
-import com.cleantemplate.base.domain.entities.Usuario;
+import com.cleantemplate.base.domain.entities.Usuario.Usuario;
 import com.cleantemplate.base.infrastructure.persistence.mappers.UsuarioMapper;
 import com.cleantemplate.base.presentation.response.UsuarioResponse;
 

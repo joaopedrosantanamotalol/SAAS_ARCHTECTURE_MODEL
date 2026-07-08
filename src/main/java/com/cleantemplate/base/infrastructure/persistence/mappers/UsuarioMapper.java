@@ -4,8 +4,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
-import com.cleantemplate.base.application.dto.AtualizarUsuarioDTO;
-import com.cleantemplate.base.application.dto.CriarUsuarioDTO;
+import com.cleantemplate.base.application.dto.Usuario.AtualizarUsuarioDTO;
+import com.cleantemplate.base.application.dto.Usuario.CriarUsuarioDTO;
 import com.cleantemplate.base.domain.entities.Usuario.Usuario;
 import com.cleantemplate.base.infrastructure.persistence.entities.UsuarioEntity;
 import com.cleantemplate.base.presentation.response.UsuarioResponse;

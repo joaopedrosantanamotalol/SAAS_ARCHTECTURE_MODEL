@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.cleantemplate.base.application.dto.AtualizarProdutoDTO;
+import com.cleantemplate.base.application.dto.Usuario.AtualizarProdutoDTO;
 import com.cleantemplate.base.domain.entities.produto.Produto;
 
 @Repository

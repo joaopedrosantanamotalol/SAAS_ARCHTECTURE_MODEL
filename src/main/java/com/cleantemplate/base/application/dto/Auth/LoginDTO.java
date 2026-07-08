@@ -1,4 +1,4 @@
-package com.cleantemplate.base.application.dto;
+package com.cleantemplate.base.application.dto.Auth;
 
 public record LoginDTO(
 

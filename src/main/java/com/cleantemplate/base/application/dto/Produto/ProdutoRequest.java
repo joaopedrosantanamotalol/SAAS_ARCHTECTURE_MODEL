@@ -1,4 +1,4 @@
-package com.cleantemplate.base.application.dto;
+package com.cleantemplate.base.application.dto.Produto;
 
 import com.cleantemplate.base.domain.entities.enums.produto.DisponibilidadeEnum;
 

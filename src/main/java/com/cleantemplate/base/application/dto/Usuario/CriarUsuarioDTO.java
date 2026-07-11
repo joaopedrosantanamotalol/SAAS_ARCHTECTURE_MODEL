@@ -14,7 +14,7 @@ public record CriarUsuarioDTO(
     String email,
 
     @NotBlank
-    @Size(min = 6)
+    @Size(min = 6, message = "a senha deve ter no minímo 6 caracteres")
     String senha
 
 ) {

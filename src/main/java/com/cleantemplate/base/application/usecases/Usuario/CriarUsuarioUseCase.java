@@ -34,11 +34,9 @@ public class CriarUsuarioUseCase {
         if (gateway.existeEmail(usuario.getEmail())) {
             throw new RuntimeException("Email já cadastrado");
         }
-
         usuario.setSenha(
             passwordEncoder.encode(usuario.getSenha())
         );
-
         usuario.setRole(RoleEnum.USER);
 
         return gateway.salvar(usuario);

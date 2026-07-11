@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 import com.cleantemplate.base.domain.services.CryptoService;
+import com.cleantemplate.base.presentation.response.ErrorResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestControllerAdvice
@@ -62,6 +63,11 @@ public Object beforeBodyWrite(
                 || path.startsWith("/produtos/teste")
                 || path.startsWith("/auth/login")
         ) {
+            return body;
+        }
+        
+        // nao criptografa as respostas da api de erro
+        if (body instanceof ErrorResponse) {
             return body;
         }
 

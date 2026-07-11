@@ -47,8 +47,6 @@ public class DecryptionRequestBodyAdvice extends RequestBodyAdviceAdapter {
 
         String body = new String(inputMessage.getBody().readAllBytes());
 
-        System.out.println(body);
-
         EncryptedRequest encryptedRequest =
                 objectMapper.readValue(body, EncryptedRequest.class);
 

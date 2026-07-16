@@ -29,7 +29,7 @@ public class CriarUsuarioUseCase {
             throw new RuntimeException("Email ou senha inválidos");
         }
         if (usuario.getSenha().equals("123456") || usuario.getSenha().equals("000000")){
-            throw new RuntimeException("Deixe de preguiça e cria uma senha decente");
+            throw new RuntimeException("A senha é simples demais");
         }
         if (gateway.existeEmail(usuario.getEmail())) {
             throw new RuntimeException("Email já cadastrado");

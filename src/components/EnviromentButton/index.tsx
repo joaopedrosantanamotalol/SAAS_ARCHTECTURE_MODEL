@@ -1,4 +1,5 @@
-import { View, Image, Text } from "react-native-reanimated/lib/typescript/Animated";
+import { View, Image, Text } from "react-native";
+import { style } from "./style";
 
 type Props = {
     image: any,
@@ -10,9 +11,9 @@ export function EnviromentButton({
     titleWhite,
 }: Props){
     return (
-        <View>
-            <Image source={image}></Image>
-            <Text>{titleWhite}</Text>
+        <View style={style.canvas_body}>
+            <Image source={image} style={style.image_button}></Image>
+            <Text style={style.titulo}>{titleWhite}</Text>
         </View>
     );
 }

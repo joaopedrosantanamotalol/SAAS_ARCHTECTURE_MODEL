@@ -2,7 +2,7 @@ import { StyleSheet, Dimensions } from "react-native";
 
 const { width } = Dimensions.get("window");
 
-const tamanho_titulo = width * 0.085; // width * 0.15 é literal 15% do tamanho da tela
+const tamanho_titulo = width * 0.090; // width * 0.15 é literal 15% do tamanho da tela
 
 export const fonte_titulo = StyleSheet.create({
     titulo_principal: {

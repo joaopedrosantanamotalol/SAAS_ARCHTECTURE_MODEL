@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 
 const { height, width } = Dimensions.get("window");
 
-const eixo_y = height * 1;
+const eixo_y = height * 1.05;
 const eixo_x = width * 0.1;
 
 export function Bolha() {

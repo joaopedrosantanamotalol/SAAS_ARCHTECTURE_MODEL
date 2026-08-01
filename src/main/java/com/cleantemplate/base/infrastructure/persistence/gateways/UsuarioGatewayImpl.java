@@ -39,9 +39,19 @@ public class UsuarioGatewayImpl implements UsuarioGateway {
     @Override
     public Usuario buscarUsuarioPorEmail(String email) {
 
-        return repository.findByEmail(email)
-                .map(mapper::toDomain)
-                .orElse(null);
+        System.out.println("EMAIL GATEWAY: " + email);
+
+    var result = repository.findByEmail(email);
+
+    System.out.println("ENTITY ENCONTRADA: " + result);
+
+    return result
+            .map(entity -> {
+                Usuario usuario = mapper.toDomain(entity);
+                System.out.println("DOMAIN GERADO: " + usuario);
+                return usuario;
+            })
+            .orElse(null);
     }
 
     @Override

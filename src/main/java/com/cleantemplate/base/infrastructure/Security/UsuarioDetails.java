@@ -26,6 +26,7 @@ public class UsuarioDetails implements UserDetails {
 
     @Override
     public String getPassword() {
+        System.out.println("HASH BANCO: " + usuario.getSenha());
         return usuario.getSenha();
     }
 

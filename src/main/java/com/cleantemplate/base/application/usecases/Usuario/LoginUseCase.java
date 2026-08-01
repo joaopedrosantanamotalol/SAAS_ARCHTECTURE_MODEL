@@ -25,12 +25,16 @@ public class LoginUseCase {
     }
 
     public String executar(LoginDTO dto){
+       
         Usuario usuario = gateway.buscarUsuarioPorEmail(dto.email());
-
+        System.out.println("USUARIO: " + usuario);
             
     if(usuario == null){
         throw new RuntimeException("usuario não achado");
     }
+
+     System.out.println("EMAIL LOGIN DTO: " + dto.email());
+     System.out.println("SENHA LOGIN DTO: " + dto.senha());
 
     boolean senhaValida =
    passwordEncoder.matches(dto.senha(), usuario.getSenha());

@@ -5,6 +5,8 @@ services:
       - .env
     ports:
       - "8443:8443"
+    volumes:
+      - /home/mota/Documentos/key/keystore.p12:/app/keystore.p12
     depends_on:
       mariadb:
         condition: service_healthy

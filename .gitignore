@@ -34,3 +34,6 @@ build/
 
 ### keys ###
 .env
+*.p12
+*.jks
+*.keystore

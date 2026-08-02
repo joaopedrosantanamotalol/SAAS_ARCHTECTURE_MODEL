@@ -60,7 +60,7 @@ export default function InsertBusiness(){
             ></DropDown>
 
             <SimpleCardTelefone 
-            titleWhite="Business Name:"
+            titleWhite="CellPhone Number:"
             />
 
             <View style={style.center}>

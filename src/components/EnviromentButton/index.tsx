@@ -2,7 +2,7 @@ import { View, Image, Text } from "react-native";
 import { style } from "./style";
 
 type Props = {
-    image: any,
+    image?: any,
     titleWhite: string,
 };
 

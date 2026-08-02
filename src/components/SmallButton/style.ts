@@ -1,11 +1,11 @@
+import { fonte_pequena } from "@/styles/fonts/fonte_pequena";
 import { fonte_titulo_card } from "@/styles/fonts/fonte_titulo_card";
 import { StyleSheet, Dimensions } from "react-native";
 
 const { width, height } = Dimensions.get("window");
 
-const body_width = width * 0.85;
+const body_width = width * 0.3;
 const body_height = height * 0.10;
-
 
 export const style = StyleSheet.create({
     canvas_body:{
@@ -20,17 +20,14 @@ export const style = StyleSheet.create({
         height:body_height,
         flexDirection: "row",
         alignItems: "center",
+        justifyContent:"center",
         gap: 10,
         paddingHorizontal: 0,
         margin:30,
     },
-    image_button:{
-        height:32,
-        width:32,
-    },
     titulo:{
-        ...fonte_titulo_card.titulo_principal,
-                color: "white",
+        ...fonte_pequena.titulo_principal,
                 alignSelf:"center",
-    }
+    },
+    
 })

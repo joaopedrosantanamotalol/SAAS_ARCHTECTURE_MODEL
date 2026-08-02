@@ -7,7 +7,6 @@ const { width, height } = Dimensions.get("window");
 
 const margem_titulo_x = width * 0.05;
 const margem_titulo_y = width * 0.10;
-const padding_top_button = height * 0.15;
 const padding_top = height * 0.0;
 
 export const style = StyleSheet.create({

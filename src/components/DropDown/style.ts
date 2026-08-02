@@ -1,3 +1,5 @@
+import { fonte_pequena } from "@/styles/fonts/fonte_pequena";
+import { fonte_titulo } from "@/styles/fonts/fonte_titulo";
 import { fonte_titulo_card } from "@/styles/fonts/fonte_titulo_card";
 import { StyleSheet, Dimensions } from "react-native";
 
@@ -23,14 +25,17 @@ export const style = StyleSheet.create({
         gap: 10,
         paddingHorizontal: 0,
         margin:30,
+        color: "white",
     },
-    image_button:{
-        height:32,
-        width:32,
+    dropdown:{
+    flex: 1,
+    height: "100%",
+    paddingHorizontal: 20,
     },
-    titulo:{
-        ...fonte_titulo_card.titulo_principal,
-                color: "white",
-                alignSelf:"center",
+    placeholder: {
+    ...fonte_titulo_card.titulo_principal,
+    },
+    cor_opcao:{
+        ...fonte_pequena.titulo_principal
     }
 })

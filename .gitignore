@@ -37,3 +37,6 @@ build/
 *.p12
 *.jks
 *.keystore
+node_modules
+.expo
+expo-env.d.ts

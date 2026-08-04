@@ -1,0 +1,7 @@
+node_modules
+.git
+.expo
+target
+expo-env.d.ts
+.vscode
+*.log

@@ -31,7 +31,7 @@ public class AuthController {
 
         ResponseCookie cookie =  ResponseCookie.from("token", token)
         .httpOnly(true)
-        .secure(true)
+        .secure(Boolean.parseBoolean(System.getenv("COOKIE_SECURE")))
         .sameSite("Lax")
         .path("/")
         .maxAge(60 * 6 * 24)
@@ -48,6 +48,7 @@ public class AuthController {
         Cookie cookie = new Cookie("token", "");
 
         cookie.setHttpOnly(true);
+        cookie.setSecure(Boolean.parseBoolean(System.getenv("COOKIE_SECURE")));
         cookie.setPath("/");
         cookie.setMaxAge(0);
 

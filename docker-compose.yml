@@ -1,33 +1,53 @@
 services:
+
   api:
     build: .
     env_file:
       - .env
-    ports:
-      - "8443:8443"
-    volumes:
-      - /home/mota/Documentos/key/keystore.p12:/app/keystore.p12
+
+    expose:
+      - "8080"
+
     depends_on:
       mariadb:
         condition: service_healthy
 
+
+  nginx:
+    image: nginx:latest
+
+    ports:
+      - "80:80"
+
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+
+    depends_on:
+      - api
+
+
   mariadb:
     image: mariadb:latest
     container_name: mariadb
+
     environment:
       MARIADB_DATABASE: model
       MARIADB_USER: ${SPRING_DATASOURCE_USERNAME}
       MARIADB_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
-      MARIADB_ROOT_PASSWORD: root
-    ports:
-      - "3307:3306"
+      MARIADB_ROOT_PASSWORD: ${ADMIN_KEY}
+
+    expose:
+      - "3306"
+
     volumes:
       - mariadb_data:/var/lib/mysql
+
     healthcheck:
       test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
       interval: 10s
       timeout: 5s
       retries: 5
+
 
 volumes:
   mariadb_data:

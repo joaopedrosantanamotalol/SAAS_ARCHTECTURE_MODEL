@@ -16,7 +16,7 @@ public class ListarEmpreendimentoUseCase {
         this.gateway = gateway;
     }
 
-    public List<Empreendimento> listar(){
+    public List<Empreendimento> executar(){
         return gateway.listarEmpreendimentos();
     }
     

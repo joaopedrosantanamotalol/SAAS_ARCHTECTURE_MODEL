@@ -14,7 +14,7 @@ public class ApagarEmpreendimentoUseCase {
         this.gateway = gateway;
     }
 
-    public void delete(Long id,Empreendimento emp){
+    public void executar(Long id){
         gateway.deletar(id);
     }
     

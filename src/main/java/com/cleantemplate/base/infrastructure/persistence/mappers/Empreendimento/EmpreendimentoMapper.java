@@ -8,6 +8,7 @@ import com.cleantemplate.base.application.dto.Empreendimento.AtualizarEmpreendim
 import com.cleantemplate.base.application.dto.Empreendimento.EmpreendimentoRequest;
 import com.cleantemplate.base.domain.entities.empreendimento.Empreendimento;
 import com.cleantemplate.base.infrastructure.persistence.entities.Empreendimento.EmpreendimentoEntity;
+import com.cleantemplate.base.presentation.response.empreendimento.EmpreendimentoResponse;
 
 @Mapper(componentModel = "spring")
 public interface EmpreendimentoMapper {
@@ -24,5 +25,7 @@ public interface EmpreendimentoMapper {
             AtualizarEmpreendimentoDTO dto,
             @MappingTarget Empreendimento emp
     );
+
+    EmpreendimentoResponse toResponse (Empreendimento emp);
 
 }

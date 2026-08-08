@@ -14,7 +14,7 @@ public class CriarEmpreendimentoUseCase {
         this.gateway = gateway;
     }
 
-    public Empreendimento execute(Empreendimento emp){
+    public Empreendimento executar(Empreendimento emp){
         return gateway.salvar(emp);
     }
 

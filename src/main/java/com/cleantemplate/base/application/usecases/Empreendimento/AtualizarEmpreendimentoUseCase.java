@@ -15,7 +15,7 @@ public class AtualizarEmpreendimentoUseCase {
         this.gateway = gateway;
     }
 
-    public Empreendimento atualizar(Long id,AtualizarEmpreendimentoDTO dto){
+    public Empreendimento executar(Long id,AtualizarEmpreendimentoDTO dto){
         return gateway.atualizar(id, dto);
     }
     

@@ -12,6 +12,32 @@ A arquitetura não tem como objetivo atender a um único cenário de negócio. E
 
 Dessa forma, a estrutura pode evoluir de acordo com as necessidades encontradas durante o desenvolvimento.
 
+## 🌿 Branches e componentes
+
+O projeto está organizado em branches destinadas às diferentes partes da aplicação:
+
+### 📱 `FRONTEND`
+
+Branch destinada ao desenvolvimento do **aplicativo mobile**, responsável pela interface e interação do usuário com o sistema.
+
+O frontend mobile será desenvolvido de forma integrada à API, consumindo seus recursos e apresentando as funcionalidades necessárias ao usuário.
+
+### ⚙️ `API`
+
+Branch destinada ao desenvolvimento da **API**, responsável pela lógica de negócio, persistência, comunicação com o banco de dados, autenticação e demais recursos necessários para o funcionamento do sistema.
+
+A API constitui a principal camada de comunicação entre os clientes da aplicação e os serviços do sistema.
+
+### 🌐 `FRONTEND-WEB` — Coming Soon
+
+> 🚧 **Coming Soon**
+
+Está planejada uma futura branch destinada ao **frontend web** da aplicação.
+
+A proposta é disponibilizar uma interface acessível por navegadores, compartilhando a mesma API e estrutura de serviços utilizada pelo aplicativo mobile.
+
+Essa etapa será desenvolvida posteriormente, conforme a evolução do projeto.
+
 ## 🏗️ Arquitetura
 
 O projeto busca aplicar conceitos de organização e separação de responsabilidades, mantendo as diferentes partes da aplicação desacopladas sempre que possível.

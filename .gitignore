@@ -40,3 +40,6 @@ build/
 node_modules
 .expo
 expo-env.d.ts
+
+### important info
+src/main/resources/application.properties

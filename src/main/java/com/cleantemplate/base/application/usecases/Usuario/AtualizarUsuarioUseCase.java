@@ -15,8 +15,12 @@ public class AtualizarUsuarioUseCase {
         this.gateway = gateway;
     }
 
-    public Usuario executar(Long id, AtualizarUsuarioDTO usuario){
-        return gateway.atualizar(id, usuario);
+    public Usuario executar(String email, AtualizarUsuarioDTO usuario){
+        return gateway.atualizar(email, usuario);
+    }
+
+    public Usuario executarPorId(Long id, AtualizarUsuarioDTO dto){
+        return gateway.atualizarPorId(id, dto);
     }
 
 }

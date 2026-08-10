@@ -70,17 +70,16 @@ public class UsuarioController {
 
     }
 
-    @PutMapping("/{id}")
+    @PutMapping()
     public UsuarioResponse atualizar(
-        @PathVariable Long id,
         @Valid @RequestBody AtualizarUsuarioDTO dto
     ) {
 
         Usuario usuarioLogado = usuarioAutenticado.get();
 
-        atualizarUsuarioUseCase.executar(id, dto);
+        Usuario usuarioAtualizado = atualizarUsuarioUseCase.executar(usuarioLogado.getEmail(), dto);
 
-        return mapper.toResponse(usuarioLogado);
+        return mapper.toResponse(usuarioAtualizado);
     }
 
     @DeleteMapping("/{id}")

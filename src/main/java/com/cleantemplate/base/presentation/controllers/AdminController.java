@@ -2,13 +2,17 @@ package com.cleantemplate.base.presentation.controllers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cleantemplate.base.application.dto.Usuario.AtualizarUsuarioDTO;
 import com.cleantemplate.base.application.dto.Usuario.CriarUsuarioDTO;
+import com.cleantemplate.base.application.usecases.Usuario.AtualizarUsuarioUseCase;
 import com.cleantemplate.base.application.usecases.admin.CriarAdminUseCase;
 import com.cleantemplate.base.domain.entities.Usuario.Usuario;
 import com.cleantemplate.base.infrastructure.persistence.mappers.UsuarioMapper;
@@ -22,10 +26,12 @@ public class AdminController {
     
     private final CriarAdminUseCase criarADM;
     private final UsuarioMapper mapper;
+    private final AtualizarUsuarioUseCase atualizar;
 
-    public AdminController(CriarAdminUseCase criarADM, UsuarioMapper mapper) {
+    public AdminController(CriarAdminUseCase criarADM, UsuarioMapper mapper, AtualizarUsuarioUseCase atualizar) {
         this.criarADM = criarADM;
         this.mapper = mapper;
+        this.atualizar = atualizar;
     }
 
     @PreAuthorize("hasRole('ADMIN')")
@@ -41,4 +47,16 @@ public class AdminController {
         
         return mapper.toResponse(criado);
     }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @PutMapping("/{id}")
+    public UsuarioResponse atualizarUsuarioAdmin(
+        @PathVariable Long id,
+        @Valid @RequestBody AtualizarUsuarioDTO dto
+    ){
+        Usuario usuarioAtualizado = atualizar.executarPorId(id, dto);
+
+        return mapper.toResponse(usuarioAtualizado);
+    }
+
 }

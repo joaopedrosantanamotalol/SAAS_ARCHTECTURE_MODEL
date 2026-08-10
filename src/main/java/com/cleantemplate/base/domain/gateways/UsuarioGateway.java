@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import com.cleantemplate.base.application.dto.Usuario.AtualizarUsuarioDTO;
 import com.cleantemplate.base.domain.entities.Usuario.Usuario;
 
-@Repository
 public interface UsuarioGateway {
     Usuario salvar(Usuario usuario);
 
@@ -15,7 +14,9 @@ public interface UsuarioGateway {
 
     List<Usuario> listarUsuarios();
 
-    Usuario atualizar(Long id, AtualizarUsuarioDTO usuario);
+    Usuario atualizar(String email, AtualizarUsuarioDTO usuario);
+
+    Usuario atualizarPorId(Long id, AtualizarUsuarioDTO dto);
 
     void deletar(Long id);
 

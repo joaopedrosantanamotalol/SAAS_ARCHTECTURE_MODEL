@@ -2,12 +2,9 @@ package com.cleantemplate.base.domain.gateways;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
 import com.cleantemplate.base.application.dto.Usuario.AtualizarProdutoDTO;
 import com.cleantemplate.base.domain.entities.produto.Produto;
 
-@Repository
 public interface ProdutoGateway {
 
     Produto salvar(Produto produto);

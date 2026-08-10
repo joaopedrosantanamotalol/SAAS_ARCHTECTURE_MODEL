@@ -63,12 +63,26 @@ public class UsuarioGatewayImpl implements UsuarioGateway {
     }
 
     @Override
-    public Usuario atualizar(Long id, AtualizarUsuarioDTO usuario){
+    public Usuario atualizarPorId(Long id, AtualizarUsuarioDTO usuario){
         UsuarioEntity entity = repository.findById(id)
         .orElseThrow(() -> new RuntimeException("não achado"));
 
         entity.setNome(usuario.nome());
         entity.setEmail(usuario.email());
+
+        UsuarioEntity atualizado = repository.save(entity);
+
+        return mapper.toDomain(atualizado);
+
+    }
+
+    @Override
+    public Usuario atualizar(String email, AtualizarUsuarioDTO dto){
+        UsuarioEntity entity = repository.findByEmail(email)
+        .orElseThrow(() -> new RuntimeException("email não achado para atualizar User"));
+
+        entity.setNome(dto.nome());
+        entity.setEmail(dto.email());
 
         UsuarioEntity atualizado = repository.save(entity);
 

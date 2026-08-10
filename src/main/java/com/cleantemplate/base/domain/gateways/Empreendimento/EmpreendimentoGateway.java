@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import com.cleantemplate.base.application.dto.Empreendimento.AtualizarEmpreendimentoDTO;
 import com.cleantemplate.base.domain.entities.empreendimento.Empreendimento;
 
-@Repository
 public interface EmpreendimentoGateway {
 
     Empreendimento salvar(Empreendimento empreendimento);

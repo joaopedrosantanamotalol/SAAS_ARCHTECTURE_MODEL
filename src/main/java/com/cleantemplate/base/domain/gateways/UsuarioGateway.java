@@ -2,8 +2,6 @@ package com.cleantemplate.base.domain.gateways;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
 import com.cleantemplate.base.application.dto.Usuario.AtualizarUsuarioDTO;
 import com.cleantemplate.base.domain.entities.Usuario.Usuario;
 

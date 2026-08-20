@@ -10,6 +10,7 @@ import { SimpleCard } from "@/components/SimpleInput";
 import { SimpleCardTelefone } from "@/components/SimpleInputTelefone";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { SmallButton } from "@/components/SmallButton";
+import { GlassButton } from "@/components/GlassButton /GlassButton";
 
 const categorias = [
   { label: "Digital", value: "digital" },
@@ -59,18 +60,16 @@ export default function InsertBusiness(){
             options={categorias}
             ></DropDown>
 
-            <SimpleCardTelefone 
+            <SimpleCardTelefone
             titleWhite="CellPhone Number:"
             />
 
             <View style={style.center}>
-            <SmallButton
-            titleWhite="Continue"
-            />
+            <GlassButton label="Continue" onPress={()=>console.log("pressionado")}/>
             </View>
 
-            
-            
+
+
             </SafeAreaView>
         </KeyboardAwareScrollView>
         </LinearGradient>

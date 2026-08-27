@@ -58,3 +58,12 @@ jobs:
           SPRING_DATASOURCE_PASSWORD: ${{ secrets.SPRING_DATASOURCE_PASSWORD }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
         run: ./mvnw package -DskipTests
+
+  deploy:
+    name: Deploy no Render
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy no Render
+        run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"

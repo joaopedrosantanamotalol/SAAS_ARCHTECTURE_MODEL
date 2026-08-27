@@ -40,12 +40,12 @@ public class UsuarioController {
     public UsuarioController(CriarUsuarioUseCase criarUseCase, ListarUsuarioUseCase listarUsuarioUseCase,
             AtualizarUsuarioUseCase atualizarUsuarioUseCase, DeletarUsuarioUseCase deletarUsuarioUseCase,
             UsuarioMapper mapper, UsuarioAutenticado usuarioAutenticado) {
-        this.criarUseCase = criarUseCase;
-        this.listarUsuarioUseCase = listarUsuarioUseCase;
-        this.atualizarUsuarioUseCase = atualizarUsuarioUseCase;
-        this.deletarUsuarioUseCase = deletarUsuarioUseCase;
-        this.mapper = mapper;
-        this.usuarioAutenticado = usuarioAutenticado;
+            this.criarUseCase = criarUseCase;
+            this.listarUsuarioUseCase = listarUsuarioUseCase;
+            this.atualizarUsuarioUseCase = atualizarUsuarioUseCase;
+            this.deletarUsuarioUseCase = deletarUsuarioUseCase;
+            this.mapper = mapper;
+            this.usuarioAutenticado = usuarioAutenticado;
     }
 
     @PostMapping

@@ -1,5 +1,6 @@
 package com.cleantemplate.base.infrastructure.Security;
 
+import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.util.Date;
 
@@ -21,7 +22,7 @@ public class JwtService implements TokenService {
     private String secret;
 
     private Key getKey() {
-        return Keys.hmacShaKeyFor(secret.getBytes());
+        return Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
     }
 
     public String gerarToken(String email) {

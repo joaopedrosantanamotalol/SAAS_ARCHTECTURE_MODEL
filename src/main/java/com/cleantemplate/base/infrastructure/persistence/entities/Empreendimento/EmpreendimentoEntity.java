@@ -3,6 +3,7 @@ package com.cleantemplate.base.infrastructure.persistence.entities.Empreendiment
 import com.cleantemplate.base.domain.entities.enums.empreendimento.EmpreendimentoENUM;
 import com.cleantemplate.base.domain.entities.enums.empreendimento.PorteEnum;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,6 +23,7 @@ public class EmpreendimentoEntity {
 
     private String CNPJ;
 
+    @Column(name = "descrição")
     private String desc;
 
     private String emailContato;

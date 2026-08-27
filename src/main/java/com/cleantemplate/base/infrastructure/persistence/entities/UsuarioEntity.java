@@ -17,6 +17,7 @@ public class UsuarioEntity {
 
     private String senha;
 
+    @Column(nullable = false, unique = true)
     private String email;
 
     @Enumerated(EnumType.STRING)
